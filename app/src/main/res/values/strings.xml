@@ -3,4 +3,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nombreApp">Adogtame</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="entrar">Entrar</string>
+    <string name="registrate">Registrate</string>
 </resources>

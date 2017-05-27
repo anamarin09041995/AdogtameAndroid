@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="nombreApp">60sp</dimen>
+    <dimen name="small">10dp</dimen>
+    <dimen name="medium">20dp</dimen>
+    <dimen name="marginNombreApp">80dp</dimen>
+</resources>
