@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegistroActivity" />
+        <activity android:name=".RegistroActivity"
+            android:theme="@style/NoActionBar"
+            />
         <activity android:name=".DetalleCatalogoActivity" />
         <activity android:name=".DetallePagoActivity"></activity>
     </application>

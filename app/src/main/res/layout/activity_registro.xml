@@ -1,9 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.anitamarin.adogtame.RegistroActivity">
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <FrameLayout android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+        <ImageView
+            android:src="@drawable/Logo"
+            android:layout_width="@dimen/logo"
+            android:layout_height="@dimen/logo"
+            android:layout_gravity="fill_horizontal" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/Fondoreg"
+            android:alpha="0.3"
+            android:scaleType="centerCrop" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.anitamarin.adogtame.LoginActivity"
+            android:orientation="vertical"
+            android:stretchColumns="*">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@string/nombreApp"
+                android:textSize="@dimen/nombreApp"
+                android:textColor="@color/colorAccent"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/marginNombreApp"
+                app:customFont='@{titulo}' />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:padding="@dimen/small">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/email_registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:hint="@string/email" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/password_registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small"
+                    >
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="@string/password" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/ciudad_registro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="@string/ciudad" />
+
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+                <Button
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:id="@+id/registro"
+                    android:text="@string/registrate"
+                    />
+
+        </TableLayout>
+    </FrameLayout>
+</layout>
+
+
