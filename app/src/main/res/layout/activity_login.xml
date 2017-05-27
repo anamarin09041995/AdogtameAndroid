@@ -16,8 +16,7 @@
         <ImageView
             android:src="@drawable/Logo"
             android:layout_width="@dimen/logo"
-            android:layout_height="@dimen/logo"
-            android:layout_gravity="fill_horizontal" />
+            android:layout_height="@dimen/logo" />
 
         <ImageView
             android:layout_width="match_parent"
@@ -52,31 +51,59 @@
                 android:gravity="center"
                 android:padding="@dimen/small">
 
-                <android.support.design.widget.TextInputLayout
-                    android:id="@+id/email_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/medium">
 
-                    <android.support.design.widget.TextInputEditText
+
+                    <android.support.design.widget.TextInputLayout
+                        android:id="@+id/email_login"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="text"
-                        android:hint="@string/email" />
+                        android:layout_marginBottom="@dimen/medium">
 
-                </android.support.design.widget.TextInputLayout>
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <ImageView
+                                android:layout_width="@dimen/icon"
+                                android:layout_height="@dimen/icon"
+                                app:srcCompat="@drawable/ic_person"
+                                />
+
+                            <android.support.design.widget.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="text"
+                                android:hint="@string/email" />
+
+                        </TableRow>
+                    </android.support.design.widget.TextInputLayout>
+
+
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/password_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <android.support.design.widget.TextInputEditText
+                    <TableRow
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="textPassword"
-                        android:hint="@string/password" />
+                        >
 
+                        <ImageView
+                            android:layout_width="@dimen/icon"
+                            android:layout_height="@dimen/icon"
+                            app:srcCompat="@drawable/ic_pass"
+                            />
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPassword"
+                            android:hint="@string/password" />
+
+                    </TableRow>
                 </android.support.design.widget.TextInputLayout>
 
             </LinearLayout>

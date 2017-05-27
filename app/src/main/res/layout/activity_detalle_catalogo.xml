@@ -1,9 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.anitamarin.adogtame.DetalleCatalogoActivity">
+    >
 
-</android.support.constraint.ConstraintLayout>
+    <data>
+        <variable
+            name="mascota"
+            type="com.example.anitamarin.adogtame.models.Mascotas"/>
+    </data>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.anitamarin.adogtame.DetalleCatalogoActivity">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{mascota.nombre}"
+                android:textSize="@dimen/titulo_detalle"
+                android:hint="Nombre"
+                android:gravity="center"
+                android:layout_marginBottom="@dimen/medium"
+                />
+
+            <ImageView
+                android:layout_height="@dimen/img_detalle"
+                android:layout_gravity="center"
+                android:src="@drawable/Fondologin"
+                android:scaleType="fitCenter"
+                android:layout_marginBottom="@dimen/medium"
+                />
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"
+                    app:srcCompat="@drawable/ic_home"
+                    android:layout_marginRight="@dimen/small"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/letra_texto"
+                    android:text="@{mascota.fundacion}"
+                    android:hint="Fundacion"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+                <ImageView
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"
+                    app:srcCompat="@drawable/ic_phone"
+                    android:layout_marginRight="@dimen/small"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/letra_texto"
+                    android:text="@{mascota.contacto}"
+                    android:hint="Contacto"
+                    />
+            </TableRow>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="@{mascota.descripcion}"
+            android:hint="Descripcion"
+            android:textSize="@dimen/letra_texto"
+            android:padding="@dimen/small"
+            />
+        <TableRow>
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="@string/adoptar"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:text="@string/apadrinar"
+                />
+        </TableRow>
+
+    </TableLayout>
+</layout>
+
