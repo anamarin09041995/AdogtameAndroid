@@ -5,11 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     >
 
-    <data>
-        <variable
-            name="mascota"
-            type="com.example.anitamarin.adogtame.models.Mascotas"/>
-    </data>
+    <data></data>
 
     <TableLayout
         android:layout_width="match_parent"
@@ -20,7 +16,6 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{mascota.nombre}"
                 android:textSize="@dimen/titulo_detalle"
                 android:hint="Nombre"
                 android:gravity="center"
@@ -48,7 +43,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/letra_texto"
-                    android:text="@{mascota.fundacion}"
                     android:hint="Fundacion"
                     />
 
@@ -67,37 +61,35 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/letra_texto"
-                    android:text="@{mascota.contacto}"
                     android:hint="Contacto"
                     />
             </TableRow>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="@{mascota.descripcion}"
-            android:hint="Descripcion"
-            android:textSize="@dimen/letra_texto"
-            android:padding="@dimen/small"
-            />
-        <TableRow>
-            <Button
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:text="@string/adoptar"
+                android:hint="Descripcion"
+                android:textSize="@dimen/letra_texto"
+                android:padding="@dimen/small"
                 />
+            <TableRow>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:text="@string/adoptar"
+                    />
 
-            <Button
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                style="@style/Widget.AppCompat.Button.Colored"
-                android:text="@string/apadrinar"
-                />
-        </TableRow>
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:text="@string/apadrinar"
+                    />
+            </TableRow>
 
     </TableLayout>
 </layout>

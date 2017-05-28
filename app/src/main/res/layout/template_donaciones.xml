@@ -7,8 +7,8 @@
 
     <data>
         <variable
-            name="mascota"
-            type="com.example.anitamarin.adogtame.models.Mascotas"/>
+            name="fundacion"
+            type="com.example.anitamarin.adogtame.models.Fundaciones"/>
     </data>
 
     <android.support.constraint.ConstraintLayout
@@ -16,6 +16,7 @@
         android:layout_height="wrap_content">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
             android:layout_width="@dimen/no_width"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/small_margin"
@@ -31,7 +32,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/img_mascota"
+                    android:id="@+id/img_fundacion"
                     android:layout_width="@dimen/no_width"
                     android:layout_height="@dimen/template_img"
                     android:layout_marginLeft="@dimen/no_margin"
@@ -39,7 +40,7 @@
                     android:layout_marginTop="@dimen/no_margin"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/cardView"
                     app:srcCompat="@color/img" />
 
                 <ImageView
@@ -49,108 +50,79 @@
                     android:layout_marginLeft="@dimen/no_margin"
                     android:layout_marginRight="@dimen/no_margin"
                     android:layout_marginTop="@dimen/no_margin"
-                    app:layout_constraintLeft_toLeftOf="@+id/img_mascota"
+                    app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/img_fundacion"
                     app:srcCompat="@drawable/mask" />
 
                 <TextView
-                    android:textSize="@dimen/titulo_template"
                     android:id="@+id/nombre"
                     android:layout_width="@dimen/no_width"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/small_margin"
                     android:layout_marginLeft="@dimen/small_margin"
                     android:layout_marginRight="@dimen/small_margin"
-                    android:textColor="@color/light"
                     app:layout_constraintBottom_toBottomOf="@+id/mask"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     tools:text="Nombre"
-                    android:text="@{mascota.nombre}"
+                    android:textColor="@color/light"
+                    android:textSize="@dimen/titulo_template"
+                    android:text="@{fundacion.nombre}"
                     />
 
                 <ImageView
-                    android:id="@+id/img_edad"
+                    android:id="@+id/img_direccion"
                     android:layout_width="@dimen/icon"
                     android:layout_height="@dimen/icon"
-                    android:layout_marginBottom="@dimen/no_margin"
                     android:layout_marginLeft="@dimen/small_margin"
-                    app:layout_constraintBottom_toBottomOf="@+id/edad"
+                    android:layout_marginTop="@dimen/small_margin"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:srcCompat="@drawable/ic_edad" />
-
-                <TextView
-                    android:id="@+id/edad"
-                    android:layout_width="@dimen/no_width"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/small_margin"
-                    android:layout_marginRight="@dimen/small_margin"
-                    android:layout_marginTop="@dimen/medium_margin"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/mask"
-                    tools:text="Edad"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toRightOf="@+id/img_edad"
-                    android:text="@{mascota.edad}"
-                    />
-
-                <ImageView
-                    android:id="@+id/img_raza"
-                    android:layout_width="@dimen/icon"
-                    android:layout_height="@dimen/icon"
-                    android:layout_marginLeft="@dimen/small_margin"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:srcCompat="@drawable/ic_dog"
-                    app:layout_constraintBottom_toBottomOf="@+id/raza"
-                    android:layout_marginBottom="@dimen/no_margin" />
+                    app:srcCompat="@drawable/ic_city" />
 
                 <TextView
-                    android:id="@+id/raza"
+                    android:id="@+id/fundacion"
                     android:layout_width="@dimen/no_width"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/small_margin"
-                    android:layout_marginTop="@dimen/big_magin"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/edad"
-                    tools:text="Raza"
-                    app:layout_constraintLeft_toRightOf="@+id/img_raza"
-                    android:layout_marginLeft="8dp"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    android:text="@{mascota.raza}"
-                    />
-
-                <ImageView
-                    android:id="@+id/img_tamanio"
-                    android:layout_width="@dimen/icon"
-                    android:layout_height="@dimen/icon"
                     android:layout_marginBottom="@dimen/no_margin"
                     android:layout_marginLeft="@dimen/small_margin"
-                    app:layout_constraintBottom_toBottomOf="@+id/tamanio"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:srcCompat="@drawable/ic_size" />
-
-                <TextView
-                    android:id="@+id/tamanio"
-                    android:layout_width="@dimen/no_width"
-                    android:layout_height="wrap_content"
                     android:layout_marginRight="@dimen/small_margin"
-                    android:layout_marginTop="@dimen/big_magin"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_direccion"
+                    app:layout_constraintLeft_toRightOf="@+id/img_direccion"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/raza"
-                    tools:text="Tamaño"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:layout_marginBottom="@dimen/small_margin"
-                    app:layout_constraintVertical_bias="1.0"
-                    app:layout_constraintLeft_toRightOf="@+id/img_tamanio"
-                    android:layout_marginLeft="@dimen/small_margin"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    android:text="@{mascota.tamanio}"
+                    tools:text="Direccion"
+                    android:text="@{fundacion.direccion}"
                     />
 
+                <ImageView
+                    android:id="@+id/img_contacto"
+                    android:layout_width="@dimen/icon"
+                    android:layout_height="@dimen/icon"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:layout_marginTop="@dimen/big_magin"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_direccion"
+                    app:srcCompat="@drawable/ic_phone" />
+
+                <TextView
+                    android:id="@+id/contacto"
+                    android:layout_width="@dimen/no_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/no_margin"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:layout_marginRight="@dimen/small_margin"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_contacto"
+                    app:layout_constraintLeft_toRightOf="@+id/img_contacto"
+                    app:layout_constraintRight_toRightOf="parent"
+                    tools:text="Contacto"
+                    android:text="@{fundacion.telefono}"
+                    />
             </android.support.constraint.ConstraintLayout>
         </android.support.v7.widget.CardView>
 

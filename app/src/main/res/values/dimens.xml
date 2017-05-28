@@ -10,4 +10,11 @@
     <dimen name="letra_texto">20sp</dimen>
     <dimen name="img_detalle">160dp</dimen>
     <dimen name="template_img">170dp</dimen>
+    <dimen name="no_margin">0dp</dimen>
+    <dimen name="no_width">0dp</dimen>
+    <dimen name="titulo_template">30sp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="big_magin">24dp</dimen>
+    <dimen name="medium_margin">16dp</dimen>
+    <dimen name="no_height">0dp</dimen>
 </resources>
