@@ -65,13 +65,14 @@
                     android:layout_marginBottom="@dimen/small_margin"
                     android:layout_marginLeft="@dimen/small_margin"
                     android:layout_marginRight="@dimen/small_margin"
-                    android:contentDescription="Nombre"
+                    android:text="@{fundacion.nombre}"
+                    android:textColor="@color/light"
+                    android:textSize="@dimen/titulo_template"
                     app:layout_constraintBottom_toBottomOf="@+id/mask"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    android:text="@{fundacion.nombre}"
-                    />
+                    tools:text="Nombre" />
 
                 <ImageView
                     android:id="@+id/img_direccion"
