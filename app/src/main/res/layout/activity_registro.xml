@@ -14,14 +14,14 @@
         >
 
         <ImageView
-            android:src="@drawable/Logo"
+            android:src="@drawable/logo"
             android:layout_width="@dimen/logo"
             android:layout_height="@dimen/logo" />
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/Fondoreg"
+            android:src="@drawable/fondoreg"
             android:alpha="0.3"
             android:scaleType="centerCrop" />
 

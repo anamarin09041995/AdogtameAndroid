@@ -6,9 +6,9 @@ package com.example.anitamarin.adogtame.models;
 
 public class Mascotas {
     String nombre, descripcion, fundacion, tamanio, edad, raza, imagen;
-    int contacto;
+    Integer contacto;
 
-    public Mascotas(String nombre, String descripcion, String fundacion, String tamanio, String edad, String raza, String imagen, int contacto) {
+    public Mascotas(String nombre, String descripcion, String fundacion, String tamanio, String edad, String raza, String imagen, Integer contacto) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fundacion = fundacion;
@@ -79,7 +79,7 @@ public class Mascotas {
         return contacto;
     }
 
-    public void setContacto(int contacto) {
+    public void setContacto(Integer contacto) {
         this.contacto = contacto;
     }
 }

@@ -25,7 +25,7 @@
             <ImageView
                 android:layout_height="@dimen/img_detalle"
                 android:layout_gravity="center"
-                android:src="@drawable/Fondologin"
+                android:src="@drawable/fondologin"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="@dimen/medium"
                 />
