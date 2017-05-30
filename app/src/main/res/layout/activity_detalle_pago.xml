@@ -1,9 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.anitamarin.adogtame.DetallePagoActivity">
+    >
+    <data>
+        <variable
+            name="fundacion"
+            type="com.example.anitamarin.adogtame.models.Fundaciones"/>
+    </data>
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.anitamarin.adogtame.DetallePagoActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/titulo_detalle"
+            android:text="@{fundacion.nombre}"
+            android:hint="Nombre"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/small" />
+
+        <ImageView
+            android:layout_width="@dimen/img_detalle"
+            android:layout_height="@dimen/img_detalle"
+            android:layout_marginTop="@dimen/small"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            app:imgUrl="@{fundacion.imagen}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/letra_texto"
+            android:text="@string/cuanto_donar"
+            android:gravity="left"
+            android:padding="@dimen/small"
+            android:layout_marginTop="@dimen/small" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/valores_donacion"
+            android:prompt="@string/titulo_spinner"
+            android:spinnerMode="dropdown"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+
+            <CheckBox
+                android:layout_marginTop="@dimen/small"
+                android:id="@+id/check_alimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alimento"
+                android:layout_marginLeft="@dimen/small" />
+
+            <CheckBox
+                android:id="@+id/check_implementos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/implementos"
+                android:layout_marginLeft="@dimen/small" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/donar"
+            style="@style/Widget.AppCompat.Button.Colored"
+            />
+
+    </LinearLayout>
+</layout>
+

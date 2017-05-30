@@ -42,7 +42,7 @@ public class VoluntariadoAdapter extends RecyclerView.Adapter<VoluntariadoAdapte
         return data.size();
     }
 
-    //region View Holders
+    //region ViewHolders
     static class VoluntariadoHolder extends RecyclerView.ViewHolder{
 
         TemplateVoluntariadoBinding binding;

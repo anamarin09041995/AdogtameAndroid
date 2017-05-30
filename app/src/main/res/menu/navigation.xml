@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_catalogo"
+        android:icon="@drawable/ic_catalogo"
+        android:title="@string/title_catalogo" />
+
+    <item
+        android:id="@+id/navigation_donaciones"
+        android:icon="@drawable/ic_monetization"
+        android:title="@string/title_donaciones" />
+
+    <item
+        android:id="@+id/navigation_seguimiento"
+        android:icon="@drawable/ic_seguimiento"
+        android:title="@string/title_seguimiento" />
+
+    <item
+        android:id="@+id/navigation_voluntariado"
+        android:icon="@drawable/ic_voluntariado"
+        android:title="@string/title_voluntariado" />
+
+</menu>

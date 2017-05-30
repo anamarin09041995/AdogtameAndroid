@@ -11,4 +11,25 @@
     <string name="ciudad">Ciudad</string>
     <string name="adoptar">Adoptar</string>
     <string name="apadrinar">Apadrinar</string>
+    <string name="cuanto_donar">¿Cuanto desea donar?</string>
+
+    <string name="titulo_spinner">Escoja un valor</string>
+
+    <string-array name="valores_donacion">
+        <item>$10.000</item>
+        <item>$20.000</item>
+        <item>$30.000</item>
+        <item>$40.000</item>
+        <item>$50.000</item>
+    </string-array>
+
+    <string name="implementos">Implementos de aseo</string>
+    <string name="alimento">Alimento</string>
+    <string name="donar">Donar</string>
+
+    <string name="title_catalogo">Catálogo</string>
+    <string name="title_donaciones">Donaciones</string>
+    <string name="title_seguimiento">Seguimiento</string>
+    <string name="title_voluntariado">Voluntariado</string>
+
 </resources>

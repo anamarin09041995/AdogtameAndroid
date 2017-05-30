@@ -42,7 +42,7 @@ public class SeguimientoAdapter extends RecyclerView.Adapter<SeguimientoAdapter.
         return data.size();
     }
 
-    //region View Holders
+    //region ViewHolders
     static class SeguimientoHolder extends RecyclerView.ViewHolder{
 
         TemplateSeguimientoBinding binding;

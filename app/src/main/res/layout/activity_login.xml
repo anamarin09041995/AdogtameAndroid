@@ -40,7 +40,7 @@
                 android:textSize="@dimen/nombreApp"
                 android:textColor="@color/colorAccent"
                 android:gravity="center"
-                app:customFont='@{titulo}'
+                app:customFont='@{"titulo"}'
                 android:layout_marginTop="@dimen/marginNombreApp"
                 />
 

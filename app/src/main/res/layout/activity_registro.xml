@@ -42,7 +42,7 @@
                 android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/marginNombreApp"
-                app:customFont='@{titulo}' />
+                app:customFont='@{"titulo"}' />
 
             <LinearLayout
                 android:orientation="vertical"
