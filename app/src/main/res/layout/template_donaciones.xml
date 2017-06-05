@@ -43,6 +43,7 @@
                     app:layout_constraintTop_toTopOf="@+id/cardView"
                     app:srcCompat="@color/img"
                     app:imgUrl="@{fundacion.imagen}"
+                    android:scaleType="centerCrop"
                     />
 
                 <ImageView

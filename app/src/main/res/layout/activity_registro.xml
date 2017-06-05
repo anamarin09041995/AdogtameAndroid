@@ -6,7 +6,9 @@
     >
 
     <data>
-
+        <variable
+            name="handler"
+            type="com.example.anitamarin.adogtame.RegistroActivity"/>
     </data>
 
     <FrameLayout android:layout_height="match_parent"
@@ -42,7 +44,7 @@
                 android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:layout_marginTop="@dimen/marginNombreApp"
-                app:customFont='@{"titulo"}' />
+                 />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -142,6 +144,7 @@
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:id="@+id/registro"
                     android:text="@string/registrate"
+                    android:onClick="@{()-> handler.goToCatalogo()}"
                     />
 
         </TableLayout>

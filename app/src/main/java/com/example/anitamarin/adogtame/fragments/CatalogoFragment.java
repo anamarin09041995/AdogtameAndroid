@@ -24,7 +24,7 @@ public class CatalogoFragment extends Fragment implements CatalogoAdapter.onMasc
     FragmentCatalogoBinding binding;
     CatalogoAdapter adapter;
 
-    public static CatalogoFragment newInstance() {
+    public static CatalogoFragment instance() {
         return new CatalogoFragment();
     }
 

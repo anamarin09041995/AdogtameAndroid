@@ -14,9 +14,8 @@ import com.example.anitamarin.adogtame.R;
  */
 public class SeguimientoFragment extends Fragment {
 
-    public static SeguimientoFragment newInstance() {
-        SeguimientoFragment fragment = new SeguimientoFragment();
-        return fragment;
+    public static SeguimientoFragment instance() {
+        return new SeguimientoFragment();
     }
 
 

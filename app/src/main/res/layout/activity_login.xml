@@ -6,11 +6,14 @@
     >
 
     <data>
-
+        <variable
+            name="handler"
+            type="com.example.anitamarin.adogtame.LoginActivity"/>
     </data>
 
     <FrameLayout android:layout_height="match_parent"
         android:layout_width="match_parent"
+        tools:context="com.example.anitamarin.adogtame.LoginActivity"
         >
 
         <ImageView
@@ -28,7 +31,6 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context="com.example.anitamarin.adogtame.LoginActivity"
             android:orientation="vertical"
             android:stretchColumns="*">
 
@@ -40,7 +42,6 @@
                 android:textSize="@dimen/nombreApp"
                 android:textColor="@color/colorAccent"
                 android:gravity="center"
-                app:customFont='@{"titulo"}'
                 android:layout_marginTop="@dimen/marginNombreApp"
                 />
 
@@ -114,13 +115,15 @@
                     android:id="@+id/registro"
                     style="@style/Widget.AppCompat.Button.Borderless.Colored"
                     android:text="@string/registrate"
-
+                    android:onClick="@{()-> handler.goToRegistro()}"
                     />
 
                 <Button
                     android:id="@+id/entrar"
                     style="@style/Widget.AppCompat.Button.Colored"
-                    android:text="@string/entrar" />
+                    android:text="@string/entrar"
+                    android:onClick="@{()-> handler.goToCatalogo()}"
+                    />
 
             </TableRow>
 

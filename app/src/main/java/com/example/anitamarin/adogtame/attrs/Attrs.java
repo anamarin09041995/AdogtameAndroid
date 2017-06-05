@@ -16,7 +16,7 @@ import com.squareup.picasso.Picasso;
 public class Attrs {
 
     @BindingAdapter("app:customFont")
-    public void setFont(TextView txt, String name) {
+    public static void setFont(TextView txt, String name) {
         AssetManager manager = txt.getContext().getAssets();
         Typeface typeface = Typeface.createFromAsset(manager, "fonts/" +name+ "ttf");
         txt.setTypeface(typeface);
@@ -26,4 +26,6 @@ public class Attrs {
     public static void setImage(ImageView img, String url){
         Picasso.with(img.getContext()).load(Uri.parse(url)).into(img );
     }
+
+
 }

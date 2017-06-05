@@ -45,6 +45,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@color/img"
                     app:imgUrl="@{fundacion.imagen}"
+                    android:scaleType="centerCrop"
                     />
 
                 <ImageView
