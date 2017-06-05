@@ -9,17 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <selector>
-
-            <item
-                android:color="@color/light"
-                android:state_enabled="true" />
-
-            <item
-                android:color="@color/colorPrimaryDark"
-                android:state_enabled="false" />
-        </selector>
-
         <FrameLayout
             android:id="@+id/frame_layout"
             android:layout_width="match_parent"
@@ -37,7 +26,9 @@
             android:background="@color/colorPrimary"
             app:itemIconTint="@color/light"
             app:itemTextColor="@color/light"
-            app:menu="@menu/navigation" />
+            app:menu="@menu/navigation"
+
+            />
 
     </RelativeLayout>
 </layout>

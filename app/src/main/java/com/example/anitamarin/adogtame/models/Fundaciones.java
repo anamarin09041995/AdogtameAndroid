@@ -8,14 +8,6 @@ public class Fundaciones {
     String nombre, descripcion, direccion, imagen, horario;
     Integer telefono;
 
-    public Fundaciones(String nombre, String descripcion, String direccion, String imagen, String horario, Integer telefono) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.direccion = direccion;
-        this.imagen = imagen;
-        this.horario = horario;
-        this.telefono = telefono;
-    }
 
     public String getNombre() {
         return nombre;

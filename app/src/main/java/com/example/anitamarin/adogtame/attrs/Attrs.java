@@ -18,12 +18,12 @@ public class Attrs {
     @BindingAdapter("app:customFont")
     public void setFont(TextView txt, String name) {
         AssetManager manager = txt.getContext().getAssets();
-        Typeface typeface = Typeface.createFromAsset(manager, "fonts"+name+".ttf");
+        Typeface typeface = Typeface.createFromAsset(manager, "fonts/" +name+ "ttf");
         txt.setTypeface(typeface);
     }
 
     @BindingAdapter("app:imgUrl")
-    public void setImage(ImageView img, String url){
+    public static void setImage(ImageView img, String url){
         Picasso.with(img.getContext()).load(Uri.parse(url)).into(img );
     }
 }

@@ -14,6 +14,10 @@ import com.example.anitamarin.adogtame.R;
  */
 public class DonacionesFragment extends Fragment {
 
+    public static DonacionesFragment newInstance() {
+        DonacionesFragment fragment = new DonacionesFragment();
+        return fragment;
+    }
 
     public DonacionesFragment() {
         // Required empty public constructor

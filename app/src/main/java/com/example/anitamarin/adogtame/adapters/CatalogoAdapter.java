@@ -1,6 +1,6 @@
 package com.example.anitamarin.adogtame.adapters;
 
-import android.content.Intent;
+
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -20,13 +20,19 @@ import java.util.List;
 
 public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.CatalogoHolder>{
 
+
+    public interface onMascotasListener{
+        void onMascotasClick(int position);
+    }
+
     LayoutInflater inflater;
     List<Mascotas> data;
+    onMascotasListener listener;
 
-
-    public CatalogoAdapter(LayoutInflater inflater, List<Mascotas> data) {
+    public CatalogoAdapter(LayoutInflater inflater, List<Mascotas> data, onMascotasListener listener) {
         this.inflater = inflater;
         this.data = data;
+        this.listener = listener;
     }
 
     @Override
@@ -38,11 +44,17 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.Catalo
     @Override
     public void onBindViewHolder(CatalogoHolder holder, int position) {
         holder.binding.setMascota(data.get(position));
+        holder.binding.card.setTag(position);
+        holder.binding.setHandler(this);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void onItemClick(int position){
+        listener.onMascotasClick(position);
     }
 
     //region ViewHolders

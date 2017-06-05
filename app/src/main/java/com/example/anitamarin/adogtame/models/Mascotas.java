@@ -8,16 +8,6 @@ public class Mascotas {
     String nombre, descripcion, fundacion, tamanio, edad, raza, imagen;
     Integer contacto;
 
-    public Mascotas(String nombre, String descripcion, String fundacion, String tamanio, String edad, String raza, String imagen, Integer contacto) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.fundacion = fundacion;
-        this.tamanio = tamanio;
-        this.edad = edad;
-        this.raza = raza;
-        this.imagen = imagen;
-        this.contacto = contacto;
-    }
 
     public String getNombre() {
         return nombre;
