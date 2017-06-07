@@ -17,4 +17,5 @@
     <dimen name="big_magin">24dp</dimen>
     <dimen name="medium_margin">16dp</dimen>
     <dimen name="no_height">0dp</dimen>
+    <dimen name="img_parallax">220dp</dimen>
 </resources>

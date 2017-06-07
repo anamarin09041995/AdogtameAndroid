@@ -18,12 +18,18 @@ import java.util.List;
 
 public class SeguimientoAdapter extends RecyclerView.Adapter<SeguimientoAdapter.SeguimientoHolder>{
 
+    public interface onMascotasListener{
+        void onMascotasClick(int position);
+    }
+
     List<Mascotas> data;
     LayoutInflater inflater;
+    onMascotasListener listener;
 
-    public SeguimientoAdapter(List<Mascotas> data, LayoutInflater inflater) {
+    public SeguimientoAdapter(LayoutInflater inflater, List<Mascotas> data, onMascotasListener listener) {
         this.data = data;
         this.inflater = inflater;
+        this.listener = listener;
     }
 
     @Override
@@ -35,11 +41,17 @@ public class SeguimientoAdapter extends RecyclerView.Adapter<SeguimientoAdapter.
     @Override
     public void onBindViewHolder(SeguimientoHolder holder, int position) {
         holder.binding.setMascota(data.get(position));
+        holder.binding.card.setTag(position);
+        holder.binding.setHandler(this);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void onItemClick(int position){
+        listener.onMascotasClick(position);
     }
 
     //region ViewHolders

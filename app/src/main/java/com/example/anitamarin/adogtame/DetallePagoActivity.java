@@ -24,12 +24,14 @@ public class DetallePagoActivity extends AppCompatActivity implements Callback {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detalle_pago);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         int pos = getIntent().getExtras().getInt("pos");
         Fundaciones fundacion = Data.getFundaciones().get(pos);
 
         binding.setFundacion(fundacion);
 
         Picasso.with(this).load(Uri.parse(fundacion.getImagen())).into(binding.img, this);
+        getSupportActionBar().setTitle(fundacion.getNombre());
     }
 
     @Override

@@ -36,7 +36,7 @@ public class DonacionesFragment extends Fragment implements DonacionesAdapter.on
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_donaciones, container, false);
         adapter = new DonacionesAdapter(getLayoutInflater(null), Data.getFundaciones(), this);
         binding.recycler.setAdapter(adapter);

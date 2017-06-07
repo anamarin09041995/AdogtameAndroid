@@ -18,12 +18,18 @@ import java.util.List;
 
 public class VoluntariadoAdapter extends RecyclerView.Adapter<VoluntariadoAdapter.VoluntariadoHolder>{
 
+    public interface onFundacionesListener{
+        void onFundacionClick(int position);
+    }
+
     List<Fundaciones> data;
     LayoutInflater inflater;
+    onFundacionesListener listener;
 
-    public VoluntariadoAdapter(List<Fundaciones> data, LayoutInflater inflater) {
+    public VoluntariadoAdapter(LayoutInflater inflater, List<Fundaciones> data, onFundacionesListener listener) {
         this.data = data;
         this.inflater = inflater;
+        this.listener = listener;
     }
 
     @Override
@@ -35,11 +41,17 @@ public class VoluntariadoAdapter extends RecyclerView.Adapter<VoluntariadoAdapte
     @Override
     public void onBindViewHolder(VoluntariadoHolder holder, int position) {
         holder.binding.setFundacion(data.get(position));
+        holder.binding.card.setTag(position);
+        holder.binding.setHandler(this);
     }
 
     @Override
     public int getItemCount() {
         return data.size();
+    }
+
+    public void onItemClick(int position){
+        listener.onFundacionClick(position);
     }
 
     //region ViewHolders

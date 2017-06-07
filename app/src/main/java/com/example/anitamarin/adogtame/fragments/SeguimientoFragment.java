@@ -1,34 +1,47 @@
 package com.example.anitamarin.adogtame.fragments;
 
 
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.anitamarin.adogtame.R;
+import com.example.anitamarin.adogtame.adapters.SeguimientoAdapter;
+import com.example.anitamarin.adogtame.databinding.FragmentSeguimientoBinding;
+import com.example.anitamarin.adogtame.util.Data;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SeguimientoFragment extends Fragment {
+public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.onMascotasListener {
+
+    SeguimientoAdapter adapter;
+    FragmentSeguimientoBinding binding;
 
     public static SeguimientoFragment instance() {
         return new SeguimientoFragment();
     }
 
 
-    public SeguimientoFragment() {
-        // Required empty public constructor
-    }
+    public SeguimientoFragment(){}
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_seguimiento, container, false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_seguimiento, container, false);
+        adapter = new SeguimientoAdapter(getLayoutInflater(null), Data.getMascotas(), this);
+        binding.recycler.setAdapter(adapter);
+        binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        return binding.getRoot();
     }
 
+    @Override
+    public void onMascotasClick(int position) {
+
+    }
 }

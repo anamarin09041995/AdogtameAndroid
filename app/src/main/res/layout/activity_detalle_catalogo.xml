@@ -34,7 +34,7 @@
                 <android.support.design.widget.CollapsingToolbarLayout
                     android:id="@+id/collapsingToolbar"
                     android:layout_width="match_parent"
-                    android:layout_height="190dp"
+                    android:layout_height="@dimen/img_parallax"
                     app:layout_scrollFlags="scroll|enterAlwaysCollapsed|exitUntilCollapsed"
                     app:contentScrim="@color/colorPrimary"
                     app:title="@{mascota.nombre}"
@@ -47,6 +47,17 @@
                         android:scaleType="centerCrop"
                         app:layout_collapseMode="parallax"
                         />
+
+                    <ImageView
+                        android:id="@+id/mask"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/img_parallax"
+                        android:layout_marginLeft="@dimen/no_margin"
+                        android:layout_marginRight="@dimen/no_margin"
+                        android:layout_marginTop="@dimen/no_margin"
+                        app:srcCompat="@drawable/mask"
+                        />
+
 
                     <android.support.v7.widget.Toolbar
                         android:id="@+id/toolbar"
