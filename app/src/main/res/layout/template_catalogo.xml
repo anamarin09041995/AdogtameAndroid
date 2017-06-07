@@ -29,6 +29,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:onClick="@{(view)->handler.onItemClick((int)view.tag)}"
             >
 
             <android.support.constraint.ConstraintLayout

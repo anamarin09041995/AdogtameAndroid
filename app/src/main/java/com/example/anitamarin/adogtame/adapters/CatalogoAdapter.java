@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.anitamarin.adogtame.DetalleCatalogoActivity;
 import com.example.anitamarin.adogtame.R;
 import com.example.anitamarin.adogtame.databinding.TemplateCatalogoBinding;
 import com.example.anitamarin.adogtame.models.Mascotas;
@@ -45,7 +44,7 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.Catalo
     public void onBindViewHolder(CatalogoHolder holder, int position) {
         holder.binding.setMascota(data.get(position));
         holder.binding.card.setTag(position);
-        //holder.binding.setHandler(this);
+        holder.binding.setHandler(this);
     }
 
     @Override

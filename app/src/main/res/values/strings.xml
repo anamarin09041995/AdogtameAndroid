@@ -31,5 +31,6 @@
     <string name="title_donaciones">Donaciones</string>
     <string name="title_seguimiento">Seguimiento</string>
     <string name="title_voluntariado">Voluntariado</string>
+    <string name="descripcion">Descripción</string>
 
 </resources>

@@ -45,6 +45,7 @@ public class CatalogoFragment extends Fragment implements CatalogoAdapter.onMasc
     @Override
     public void onMascotasClick(int position) {
         Intent intent = new Intent(getActivity(), DetalleCatalogoActivity.class);
+        intent.putExtra("pos", position);
         startActivity(intent);
     }
 
