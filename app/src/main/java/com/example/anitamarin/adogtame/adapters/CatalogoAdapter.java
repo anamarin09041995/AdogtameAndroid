@@ -1,6 +1,5 @@
 package com.example.anitamarin.adogtame.adapters;
 
-
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

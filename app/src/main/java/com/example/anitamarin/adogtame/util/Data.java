@@ -1,5 +1,6 @@
 package com.example.anitamarin.adogtame.util;
 
+import com.example.anitamarin.adogtame.models.Fundaciones;
 import com.example.anitamarin.adogtame.models.Mascotas;
 
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import java.util.List;
 public class Data {
 
     private static List<Mascotas> mascotas;
+    private static List<Fundaciones> fundaciones;
+
     public static List<Mascotas> getMascotas(){
         if(mascotas ==  null){
             mascotas =  new ArrayList<>();
@@ -41,6 +44,34 @@ public class Data {
 
         }
         return  mascotas;
+    }
+
+    public static List<Fundaciones> getFundaciones(){
+        if(fundaciones ==  null){
+            fundaciones =  new ArrayList<>();
+
+            Fundaciones f1 = new Fundaciones();
+            f1.setNombre("Vida animal");
+            f1.setDescripcion("Se buscan personas dispuestas a ayudar a pasear los perritos");
+            f1.setDireccion("Cra 9 # 67N-78");
+            f1.setImagen("https://sites.google.com/site/fundacionvidaanimalpopayan/_/rsrc/1316780706284/config/customLogo.gif?revision=5");
+            f1.setHorario("Lunes a Domingo de 8am - 4pm");
+            f1.setTelefono(8332567);
+
+            Fundaciones f2 = new Fundaciones();
+            f2.setNombre("Paz animal");
+            f2.setDescripcion("Se buscan personas dispuestas a ayudar con el aseo de las casas y cobijas de los animales");
+            f2.setDireccion("Calle 4 # 8-04");
+            f2.setImagen("http://www.defensacali.org/wp-content/uploads/foto-paz-animal.jpg");
+            f2.setHorario("Sabados y Domingos de 10am - 5pm");
+            f2.setTelefono(8327867);
+
+
+            fundaciones.add(f1);
+            fundaciones.add(f2);
+
+        }
+        return  fundaciones;
     }
 }
 

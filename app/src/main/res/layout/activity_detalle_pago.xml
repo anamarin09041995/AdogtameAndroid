@@ -26,12 +26,12 @@
             android:layout_marginTop="@dimen/small" />
 
         <ImageView
+            android:id="@+id/img"
             android:layout_width="@dimen/img_detalle"
             android:layout_height="@dimen/img_detalle"
             android:layout_marginTop="@dimen/small"
             android:layout_gravity="center"
             android:scaleType="centerCrop"
-            app:imgUrl="@{fundacion.imagen}"
             />
 
         <TextView

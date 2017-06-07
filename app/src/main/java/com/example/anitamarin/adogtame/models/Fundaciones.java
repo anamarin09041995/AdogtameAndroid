@@ -8,7 +8,6 @@ public class Fundaciones {
     String nombre, descripcion, direccion, imagen, horario;
     Integer telefono;
 
-
     public String getNombre() {
         return nombre;
     }
@@ -49,9 +48,7 @@ public class Fundaciones {
         this.horario = horario;
     }
 
-    public int getTelefono() {
-        return telefono;
-    }
+    public int getTelefono() {return telefono;}
 
     public void setTelefono(Integer telefono) {
         this.telefono = telefono;

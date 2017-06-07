@@ -23,6 +23,8 @@
 
             <include layout="@layout/content_detalle_catalogo" app:mascota="@{mascota}"/>
 
+        </android.support.v4.widget.NestedScrollView>
+
             <android.support.design.widget.AppBarLayout
                 android:id="@+id/appbar"
                 android:layout_width="match_parent"
@@ -56,8 +58,6 @@
                 </android.support.design.widget.CollapsingToolbarLayout>
 
             </android.support.design.widget.AppBarLayout>
-
-        </android.support.v4.widget.NestedScrollView>
 
 
     </android.support.design.widget.CoordinatorLayout>
