@@ -12,7 +12,7 @@
     <string name="adoptar">Adoptar</string>
     <string name="apadrinar">Apadrinar</string>
     <string name="cuanto_donar">¿Cuanto desea donar?</string>
-
+    <string name="descripcion">Descripción</string>
     <string name="titulo_spinner">Escoja un valor</string>
 
     <string-array name="valores_donacion">
@@ -23,14 +23,23 @@
         <item>$50.000</item>
     </string-array>
 
-    <string name="implementos">Implementos de aseo</string>
-    <string name="alimento">Alimento</string>
-    <string name="donar">Donar</string>
 
+    <!--Pestañas -->
     <string name="title_catalogo">Catálogo</string>
     <string name="title_donaciones">Donaciones</string>
     <string name="title_seguimiento">Seguimiento</string>
     <string name="title_voluntariado">Voluntariado</string>
-    <string name="descripcion">Descripción</string>
+
+
+    <!--Alertas -->
+    <string name="implementos">Implementos de aseo</string>
+    <string name="alimento">Alimento</string>
+    <string name="donar">Donar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="ok">Ok</string>
+    <string name="confirmacion">Confirmar donación</string>
+    <string name="title_alerta_voluntariado">Fundacion </string>
+    <string name="mensaje_alerta_voluntariado">Gracias por ser parte del cambio. Nuestros horarios son: </string>
 
 </resources>

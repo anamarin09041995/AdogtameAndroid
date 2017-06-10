@@ -8,6 +8,9 @@
         <variable
             name="fundacion"
             type="com.example.anitamarin.adogtame.models.Fundaciones"/>
+        <variable
+            name="handler"
+            type="com.example.anitamarin.adogtame.DetallePagoActivity"/>
     </data>
 
     <LinearLayout
@@ -70,10 +73,12 @@
         </LinearLayout>
 
         <Button
+            android:id="@+id/btn_donar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/donar"
             style="@style/Widget.AppCompat.Button.Colored"
+            android:onClick="@{() -> handler.donar()}"
             />
 
     </LinearLayout>

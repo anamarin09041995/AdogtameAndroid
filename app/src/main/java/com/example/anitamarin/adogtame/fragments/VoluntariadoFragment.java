@@ -1,18 +1,23 @@
 package com.example.anitamarin.adogtame.fragments;
 
 
+
+import android.content.DialogInterface;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import com.example.anitamarin.adogtame.R;
-import com.example.anitamarin.adogtame.adapters.DonacionesAdapter;
+
 import com.example.anitamarin.adogtame.adapters.VoluntariadoAdapter;
 import com.example.anitamarin.adogtame.databinding.FragmentVoluntariadoBinding;
+import com.example.anitamarin.adogtame.models.Fundaciones;
 import com.example.anitamarin.adogtame.util.Data;
 
 /**
@@ -28,9 +33,7 @@ public class VoluntariadoFragment extends Fragment implements VoluntariadoAdapte
     }
 
 
-    public VoluntariadoFragment() {
-        // Required empty public constructor
-    }
+    public VoluntariadoFragment() { }
 
 
     @Override
@@ -46,5 +49,25 @@ public class VoluntariadoFragment extends Fragment implements VoluntariadoAdapte
     @Override
     public void onFundacionClick(int position) {
 
+        Fundaciones fundacion = Data.getFundaciones().get(position);
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+        // set title
+        builder.setTitle(R.string.title_alerta_voluntariado + fundacion.getNombre());
+
+        // set dialog message
+        builder
+                .setMessage(R.string.mensaje_alerta_voluntariado + fundacion.getHorario())
+                .setCancelable(false)
+                .setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog,int id) {
+                    }
+                });
+
+        // create alert dialog
+        AlertDialog alertDialog = builder.create();
+        // show it
+        alertDialog.show();
     }
 }
+
