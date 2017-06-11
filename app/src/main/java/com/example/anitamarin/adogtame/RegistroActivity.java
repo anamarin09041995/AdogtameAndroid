@@ -17,6 +17,7 @@ public class RegistroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_registro);
+        binding.setHandler(this);
     }
 
     public void goToCatalogo(){
@@ -26,11 +27,19 @@ public class RegistroActivity extends AppCompatActivity {
         password = binding.passwordRegistro.getText().toString();
         city = binding.ciudadRegistro.getText().toString();
 
-        if((email.equals("")) && (password.equals("")) && (city.equals(""))){
+        if((email.equals("")) || (password.equals("")) || (city.equals(""))){
             Toast.makeText(this, "Por favor ingrese datos en todos los campos", Toast.LENGTH_SHORT).show();
         }else {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+            finish();
+
         }
+    }
+
+    public void cancelar(){
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

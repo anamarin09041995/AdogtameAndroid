@@ -140,12 +140,21 @@
 
             </LinearLayout>
 
+            <TableRow>
+                <Button
+                    android:id="@+id/cancelar"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:text="@string/cancelar"
+                    android:onClick="@{()-> handler.cancelar()}"
+                    />
+
                 <Button
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:id="@+id/registro"
                     android:text="@string/registrate"
                     android:onClick="@{()-> handler.goToCatalogo()}"
                     />
+            </TableRow>
 
         </TableLayout>
     </FrameLayout>
