@@ -18,17 +18,18 @@ public class LoginActivity extends AppCompatActivity {
         //setContentView(R.layout.activity_login);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         binding.setHandler(this);
+
     }
 
     public void goToCatalogo(){
 
         String email, password;
-        email = binding.emailLogin.toString();
-        password = binding.passwordLogin.toString();
+        email = binding.emailLogin.getText().toString();
+        password = binding.passwordLogin.getText().toString();
 
-        if((email == null) || (password ==null)) {
-
-            Toast.makeText(this, "Por favor llene todos los campos", Toast.LENGTH_SHORT).show();
+        if((email.equals("")) || (password.equals("")) ) {
+            Toast.makeText(this, "Por favor ingrese datos en todos los campos", Toast.LENGTH_SHORT).show();
+            return;
         }
         else {
             Intent intent = new Intent(this, MainActivity.class);
