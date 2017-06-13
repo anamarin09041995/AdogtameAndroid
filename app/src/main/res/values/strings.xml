@@ -42,4 +42,10 @@
     <string name="title_alerta_voluntariado">Fundacion </string>
     <string name="mensaje_alerta_voluntariado">Gracias por ser parte del cambio. Nuestros horarios son: </string>
 
+    <!--Mensajes backend-->
+    <string name="error_servidor_registro">Error al conectarse al servidor</string>
+    <string name="error_registro_usuario">Error al registrar usuario</string>
+    <string name="registro_exitoso">El registro ha sido exitoso</string>
+    <string name="registro_existente">El usuario ya se encuentra registrado</string>
+
 </resources>

@@ -6,6 +6,8 @@ import com.example.anitamarin.adogtame.models.Mascotas;
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+
 /**
  * Created by Anita Marin on 25/05/2017.
  */

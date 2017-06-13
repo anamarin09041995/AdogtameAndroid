@@ -65,4 +65,9 @@ public class SeguimientoAdapter extends RecyclerView.Adapter<SeguimientoAdapter.
         }
     }
     //endregion
+
+    public void setData(List<Mascotas> data){
+        this.data = data;
+        notifyDataSetChanged();
+    }
 }

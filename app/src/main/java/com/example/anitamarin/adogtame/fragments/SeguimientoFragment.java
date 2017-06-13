@@ -9,10 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.anitamarin.adogtame.App;
 import com.example.anitamarin.adogtame.R;
 import com.example.anitamarin.adogtame.adapters.SeguimientoAdapter;
 import com.example.anitamarin.adogtame.databinding.FragmentSeguimientoBinding;
+import com.example.anitamarin.adogtame.models.Mascotas;
+import com.example.anitamarin.adogtame.models.MascotasDao;
 import com.example.anitamarin.adogtame.util.Data;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -21,6 +26,7 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
 
     SeguimientoAdapter adapter;
     FragmentSeguimientoBinding binding;
+    MascotasDao dao;
 
     public static SeguimientoFragment instance() {
         return new SeguimientoFragment();
@@ -38,7 +44,15 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
         binding.recycler.setAdapter(adapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
         return binding.getRoot();
+        //dao = ((App)getApplication()).session.getMascotasDao();
     }
+
+    /*@Override
+    public void onResume() {
+        super.onResume();
+        List<Mascotas> data = dao.loadAll();
+        adapter.setData(data);
+    }*/
 
     @Override
     public void onMascotasClick(int position) {

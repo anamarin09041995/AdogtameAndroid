@@ -1,13 +1,39 @@
 package com.example.anitamarin.adogtame.models;
 
-/**
- * Created by Anita Marin on 25/05/2017.
- */
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Generated;
 
+@Entity
 public class Mascotas {
+
+    @Id(autoincrement = true)
+    private Long id;
     String nombre, descripcion, fundacion, tamanio, edad, raza, imagen;
     Integer contacto;
 
+    @Generated(hash = 1921089432)
+    public Mascotas(Long id, String nombre, String descripcion, String fundacion,
+            String tamanio, String edad, String raza, String imagen,
+            Integer contacto) {
+        this.id = id;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.fundacion = fundacion;
+        this.tamanio = tamanio;
+        this.edad = edad;
+        this.raza = raza;
+        this.imagen = imagen;
+        this.contacto = contacto;
+    }
+
+    @Generated(hash = 963208691)
+    public Mascotas() {
+    }
+
+    public Long getId() { return id;}
+
+    public void setId(Long id) { this.id = id; }
 
     public String getNombre() {
         return nombre;

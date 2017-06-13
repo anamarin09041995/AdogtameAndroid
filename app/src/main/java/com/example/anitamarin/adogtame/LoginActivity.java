@@ -5,10 +5,10 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.example.anitamarin.adogtame.databinding.ActivityLoginBinding;
+import com.example.anitamarin.adogtame.models.Users;
 import com.example.anitamarin.adogtame.util.Preference;
 
 public class LoginActivity extends AppCompatActivity {
@@ -48,9 +48,9 @@ public class LoginActivity extends AppCompatActivity {
         else {
             SharedPreferences.Editor editor = preferences.edit();
             editor.putString(Preference.KEY_EMAIL, email);
-            Log.d("email", email);
             editor.putBoolean(Preference.KEY_LOGGED, true);
             editor.apply();
+            Users user = new Users(email, password);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
