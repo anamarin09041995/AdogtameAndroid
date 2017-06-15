@@ -53,11 +53,11 @@ public class VoluntariadoFragment extends Fragment implements VoluntariadoAdapte
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
 
         // set title
-        builder.setTitle(R.string.title_alerta_voluntariado + fundacion.getNombre());
+        builder.setTitle("Fundación " + fundacion.getNombre());
 
         // set dialog message
         builder
-                .setMessage(R.string.mensaje_alerta_voluntariado + fundacion.getHorario())
+                .setMessage("Gracias por ser parte del cambio. Nuestros horarios son: " + fundacion.getHorario())
                 .setCancelable(false)
                 .setPositiveButton(R.string.ok,new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog,int id) {

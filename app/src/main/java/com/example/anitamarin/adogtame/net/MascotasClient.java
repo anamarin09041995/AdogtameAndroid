@@ -16,5 +16,4 @@ public interface MascotasClient {
     @GET("mascotas")
     Call<List<Mascotas>> all();
 
-
 }

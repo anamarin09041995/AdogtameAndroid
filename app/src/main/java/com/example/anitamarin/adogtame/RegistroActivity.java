@@ -39,14 +39,10 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
 
 
         if((email.equals("")) || (password.equals("")) || (city.equals(""))){
-            Toast.makeText(this, "Por favor ingrese datos en todos los campos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.campos_vacios, Toast.LENGTH_SHORT).show();
         }else {
             Call<RegisterResponse> request = client.register(user);
             request.enqueue(this);
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-            finish();
-
         }
     }
 
@@ -62,7 +58,9 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
             RegisterResponse registerResponse = response.body();
 
             if(registerResponse.isSuccess()){
-                Toast.makeText(this, R.string.registro_exitoso, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                finish();
 
             }else if(registerResponse.isExist()){
                 Toast.makeText(this, R.string.registro_existente, Toast.LENGTH_SHORT).show();

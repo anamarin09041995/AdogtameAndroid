@@ -13,8 +13,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class App extends Application {
 
-    Retrofit retrofit;
-    DaoSession session;
+    public static Retrofit retrofit;
+    public static DaoSession session;
 
     @Override
     public void onCreate() {
@@ -22,7 +22,7 @@ public class App extends Application {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "mascotas.db");
         Database db = helper.getWritableDb();
         session = new DaoMaster(db).newSession();
-        retrofit = new Retrofit.Builder().baseUrl("http://191.111.190.145:3000")
+        retrofit = new Retrofit.Builder().baseUrl("http://186.112.33.237:3000")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
     }

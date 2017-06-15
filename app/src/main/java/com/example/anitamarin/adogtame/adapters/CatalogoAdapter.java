@@ -10,6 +10,7 @@ import com.example.anitamarin.adogtame.R;
 import com.example.anitamarin.adogtame.databinding.TemplateCatalogoBinding;
 import com.example.anitamarin.adogtame.models.Mascotas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,7 +18,6 @@ import java.util.List;
  */
 
 public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.CatalogoHolder>{
-
 
     public interface onMascotasListener{
         void onMascotasClick(int position);
@@ -54,6 +54,12 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.Catalo
     public void onItemClick(int position){
         listener.onMascotasClick(position);
     }
+
+    public void setData(List<Mascotas> data){
+        this.data = data;
+        notifyDataSetChanged();
+    }
+
 
     //region ViewHolders
     static class CatalogoHolder extends RecyclerView.ViewHolder{

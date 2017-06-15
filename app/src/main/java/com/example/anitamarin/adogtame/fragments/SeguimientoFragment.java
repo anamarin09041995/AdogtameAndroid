@@ -43,16 +43,18 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
         adapter = new SeguimientoAdapter(getLayoutInflater(null), Data.getMascotas(), this);
         binding.recycler.setAdapter(adapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
+        dao = App.session.getMascotasDao();
+
         return binding.getRoot();
-        //dao = ((App)getApplication()).session.getMascotasDao();
+
     }
 
-    /*@Override
+    @Override
     public void onResume() {
         super.onResume();
         List<Mascotas> data = dao.loadAll();
         adapter.setData(data);
-    }*/
+    }
 
     @Override
     public void onMascotasClick(int position) {

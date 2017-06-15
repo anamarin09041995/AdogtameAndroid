@@ -47,5 +47,7 @@
     <string name="error_registro_usuario">Error al registrar usuario</string>
     <string name="registro_exitoso">El registro ha sido exitoso</string>
     <string name="registro_existente">El usuario ya se encuentra registrado</string>
+    <string name="campos_vacios">Por favor ingrese datos en todos los campos</string>
+    <string name="login_incorrecto">Email o password incorrectos</string>
 
 </resources>
