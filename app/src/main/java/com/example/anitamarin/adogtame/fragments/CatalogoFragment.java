@@ -48,7 +48,6 @@ public class CatalogoFragment extends Fragment implements CatalogoAdapter.onMasc
                              Bundle savedInstanceState) {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_catalogo, container, false);
-        //adapter = new CatalogoAdapter(getLayoutInflater(null), Data.getMascotas(), this);
         adapter = new CatalogoAdapter(getLayoutInflater(null), new ArrayList<Mascotas>(), this);
         binding.recycler.setAdapter(adapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -70,14 +69,13 @@ public class CatalogoFragment extends Fragment implements CatalogoAdapter.onMasc
             @Override
             public void onResponse(Call<List<Mascotas>> call, Response<List<Mascotas>> response) {
                 if(response.isSuccessful()){
-                    List<Mascotas> data = response.body();
-                    adapter.setData(data);
+                    Data.mascotas = response.body();
+                    adapter.setData(Data.mascotas);
                 }
             }
-
             @Override
             public void onFailure(Call<List<Mascotas>> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
     }

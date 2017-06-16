@@ -60,7 +60,6 @@ public class CatalogoAdapter extends RecyclerView.Adapter<CatalogoAdapter.Catalo
         notifyDataSetChanged();
     }
 
-
     //region ViewHolders
     static class CatalogoHolder extends RecyclerView.ViewHolder{
 

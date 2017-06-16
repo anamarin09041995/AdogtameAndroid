@@ -28,7 +28,7 @@ public class DetallePagoActivity extends AppCompatActivity implements Callback {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_detalle_pago);
 
         int pos = getIntent().getExtras().getInt("pos");
-        Fundaciones fundacion = Data.getFundaciones().get(pos);
+        Fundaciones fundacion = Data.fundaciones.get(pos);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.setFundacion(fundacion);
@@ -64,7 +64,7 @@ public class DetallePagoActivity extends AppCompatActivity implements Callback {
         implementos = binding.checkImplementos.isChecked();
 
         if(selected == null ||((alimento == false)&&(implementos == false))){
-            Toast.makeText(this, "Por favor elija una opcion de destino y valor de donacion", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.validacion_donacion, Toast.LENGTH_SHORT).show();
         }
 
         else{

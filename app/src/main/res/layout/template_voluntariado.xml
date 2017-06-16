@@ -106,20 +106,18 @@
                 <ImageView
                     android:id="@+id/img_contacto"
                     android:layout_width="@dimen/icon"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="@dimen/icon"
                     android:layout_marginLeft="@dimen/small_margin"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    app:srcCompat="@drawable/ic_phone"
-                    android:layout_marginTop="0dp"
-                    app:layout_constraintTop_toBottomOf="@+id/img_direccion" />
+                    app:layout_constraintTop_toBottomOf="@+id/img_direccion"
+                    app:srcCompat="@drawable/ic_phone" />
 
                 <TextView
                     android:id="@+id/contacto"
                     android:layout_width="@dimen/no_width"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/no_margin"
+                    android:layout_marginBottom="-1dp"
                     android:layout_marginLeft="@dimen/small_margin"
                     android:layout_marginRight="@dimen/small_margin"
                     android:text='@{"" + fundacion.telefono}'
@@ -127,7 +125,11 @@
                     app:layout_constraintBottom_toBottomOf="@+id/img_contacto"
                     app:layout_constraintLeft_toRightOf="@+id/img_contacto"
                     app:layout_constraintRight_toRightOf="parent"
-                    tools:text="Contacto" />
+                    tools:text="Contacto"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/img_direccion"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintVertical_bias="0.625" />
 
                 <TextView
                     android:id="@+id/descripcion"

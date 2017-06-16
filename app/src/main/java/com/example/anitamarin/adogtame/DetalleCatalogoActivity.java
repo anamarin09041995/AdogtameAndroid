@@ -29,7 +29,7 @@ public class DetalleCatalogoActivity extends AppCompatActivity implements Callba
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         int pos = getIntent().getExtras().getInt("pos");
-        Mascotas mascota = Data.getMascotas().get(pos);
+        Mascotas mascota = Data.mascotas.get(pos);
 
         binding.setMascota(mascota);
 

@@ -39,8 +39,8 @@
     <string name="cancelar">Cancelar</string>
     <string name="ok">Ok</string>
     <string name="confirmacion">Confirmar donación</string>
-    <string name="title_alerta_voluntariado">Fundacion </string>
-    <string name="mensaje_alerta_voluntariado">Gracias por ser parte del cambio. Nuestros horarios son: </string>
+    <string name="title_alerta_voluntariado">Fundacion %s</string>
+    <string name="mensaje_alerta_voluntariado">Gracias por ser parte del cambio. Nuestros horarios son: %s</string>
 
     <!--Mensajes backend-->
     <string name="error_servidor_registro">Error al conectarse al servidor</string>
@@ -49,5 +49,6 @@
     <string name="registro_existente">El usuario ya se encuentra registrado</string>
     <string name="campos_vacios">Por favor ingrese datos en todos los campos</string>
     <string name="login_incorrecto">Email o password incorrectos</string>
+    <string name="validacion_donacion">Por favor elija una opcion de destino y valor de donacion</string>
 
 </resources>

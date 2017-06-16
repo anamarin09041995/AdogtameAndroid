@@ -5,8 +5,16 @@ package com.example.anitamarin.adogtame.models;
  */
 
 public class Users {
-    String email, password, city;
+    String email, password, city, _id;
     Long id;
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
 
     public Users(String email, String password) {
         this.email = email;

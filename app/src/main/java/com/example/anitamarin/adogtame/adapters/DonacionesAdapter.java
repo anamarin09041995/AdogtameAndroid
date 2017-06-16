@@ -57,6 +57,11 @@ public class DonacionesAdapter extends RecyclerView.Adapter<DonacionesAdapter.Do
         listener.onFundacionClick(position);
     }
 
+    public void setData(List<Fundaciones> data){
+        this.data = data;
+        notifyDataSetChanged();
+    }
+
     //region ViewHolders
     static class DonacionesHolder extends RecyclerView.ViewHolder{
 

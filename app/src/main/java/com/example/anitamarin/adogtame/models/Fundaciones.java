@@ -6,7 +6,7 @@ package com.example.anitamarin.adogtame.models;
 
 public class Fundaciones {
     String nombre, descripcion, direccion, imagen, horario;
-    Integer telefono;
+    Long telefono;
 
     public String getNombre() {
         return nombre;
@@ -48,9 +48,9 @@ public class Fundaciones {
         this.horario = horario;
     }
 
-    public int getTelefono() {return telefono;}
+    public Long getTelefono() {return telefono;}
 
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
 }

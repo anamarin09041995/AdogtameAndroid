@@ -30,11 +30,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
         preferences = getSharedPreferences(Preference.PREFERENCE_NAME, MODE_PRIVATE);
         boolean logged = preferences.getBoolean(Preference.KEY_LOGGED, false);
 
-        if(logged){
+        /*if(logged){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return;
-        }
+        }*/
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         binding.setHandler(this);

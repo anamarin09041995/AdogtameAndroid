@@ -54,6 +54,11 @@ public class VoluntariadoAdapter extends RecyclerView.Adapter<VoluntariadoAdapte
         listener.onFundacionClick(position);
     }
 
+    public void setData(List<Fundaciones> data){
+        this.data = data;
+        notifyDataSetChanged();
+    }
+
     //region ViewHolders
     static class VoluntariadoHolder extends RecyclerView.ViewHolder{
 

@@ -9,14 +9,18 @@ public class Mascotas {
 
     @Id(autoincrement = true)
     private Long id;
-    String nombre, descripcion, fundacion, tamanio, edad, raza, imagen;
-    Integer contacto;
 
-    @Generated(hash = 1921089432)
-    public Mascotas(Long id, String nombre, String descripcion, String fundacion,
-            String tamanio, String edad, String raza, String imagen,
-            Integer contacto) {
+    String _id, nombre, descripcion, fundacion, tamanio, edad, raza, imagen;
+    Long contacto;
+
+
+
+    @Generated(hash = 300620838)
+    public Mascotas(Long id, String _id, String nombre, String descripcion,
+            String fundacion, String tamanio, String edad, String raza,
+            String imagen, Long contacto) {
         this.id = id;
+        this._id = _id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fundacion = fundacion;
@@ -29,6 +33,16 @@ public class Mascotas {
 
     @Generated(hash = 963208691)
     public Mascotas() {
+    }
+
+
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public Long getId() { return id;}
@@ -91,11 +105,11 @@ public class Mascotas {
         this.imagen = imagen;
     }
 
-    public int getContacto() {
+    public Long getContacto() {
         return contacto;
     }
 
-    public void setContacto(Integer contacto) {
+    public void setContacto(Long contacto) {
         this.contacto = contacto;
     }
 }

@@ -22,7 +22,7 @@ public class App extends Application {
         DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "mascotas.db");
         Database db = helper.getWritableDb();
         session = new DaoMaster(db).newSession();
-        retrofit = new Retrofit.Builder().baseUrl("http://186.112.33.237:3000")
+        retrofit = new Retrofit.Builder().baseUrl("https://test1-adogtame.herokuapp.com")
                 .addConverterFactory(GsonConverterFactory.create(new Gson()))
                 .build();
     }
