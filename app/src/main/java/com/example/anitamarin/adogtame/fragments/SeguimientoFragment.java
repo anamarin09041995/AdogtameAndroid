@@ -68,6 +68,8 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
     public void loadSeguimiento(){
 
 
+
+
     }
 
     /*@Override

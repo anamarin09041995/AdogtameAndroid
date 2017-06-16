@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.anitamarin.adogtame.databinding.ActivityLoginBinding;
@@ -30,11 +31,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
         preferences = getSharedPreferences(Preference.PREFERENCE_NAME, MODE_PRIVATE);
         boolean logged = preferences.getBoolean(Preference.KEY_LOGGED, false);
 
-        /*if(logged){
+        if(logged){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return;
-        }*/
+        }
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         binding.setHandler(this);
@@ -76,6 +77,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
         if(response.isSuccessful()){
             SimpleResponse simpleResponse = response.body();
             if(simpleResponse.isSuccess()){
+                String userId = simpleResponse.usersget().get_id();
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString(Preference.KEY_ID, userId);
+                editor.apply();
+                Log.d("idusuario", simpleResponse.usersget().get_id()+"email:"+simpleResponse.usersget().getEmail());
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }else{

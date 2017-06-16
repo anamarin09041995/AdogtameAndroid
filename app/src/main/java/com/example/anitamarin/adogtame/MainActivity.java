@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     ActivityMainBinding binding;
     int content;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         }
         setContent(content);
         binding.bottomNavigation.setOnNavigationItemSelectedListener(this);
+
+
     }
 
     public void putFragment(int container, Fragment fragment){

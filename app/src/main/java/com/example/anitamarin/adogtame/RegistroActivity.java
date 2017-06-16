@@ -58,7 +58,7 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
             RegisterResponse registerResponse = response.body();
 
             if(registerResponse.isSuccess()){
-                Intent intent = new Intent(this, MainActivity.class);
+                Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
 
