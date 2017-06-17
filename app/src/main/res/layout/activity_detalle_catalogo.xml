@@ -9,6 +9,9 @@
         <variable
             name="mascota"
             type="com.example.anitamarin.adogtame.models.Mascotas"/>
+        <variable
+            name="handler"
+            type="com.example.anitamarin.adogtame.DetalleCatalogoActivity"/>
     </data>
 
     <android.support.design.widget.CoordinatorLayout
@@ -21,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <include layout="@layout/content_detalle_catalogo" app:mascota="@{mascota}"/>
+            <include layout="@layout/content_detalle_catalogo" app:mascota="@{mascota}" app:handler="@{handler}"/>
 
         </android.support.v4.widget.NestedScrollView>
 
@@ -70,7 +73,7 @@
 
             </android.support.design.widget.AppBarLayout>
 
-
     </android.support.design.widget.CoordinatorLayout>
+
 </layout>
 

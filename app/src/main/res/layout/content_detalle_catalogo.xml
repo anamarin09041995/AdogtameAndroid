@@ -9,6 +9,9 @@
         <variable
             name="mascota"
             type="com.example.anitamarin.adogtame.models.Mascotas"/>
+        <variable
+            name="handler"
+            type="com.example.anitamarin.adogtame.DetalleCatalogoActivity"/>
     </data>
 
     <LinearLayout
@@ -134,6 +137,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:text="@string/adoptar"
+                android:onClick="@{() -> handler.adoptar()}"
                 />
 
             <Button
@@ -142,6 +146,7 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:text="@string/apadrinar"
+                android:onClick="@{()->handler.apadrinar()}"
                 />
 
         </LinearLayout>

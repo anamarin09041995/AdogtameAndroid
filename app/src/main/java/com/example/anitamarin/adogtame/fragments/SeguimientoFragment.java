@@ -42,6 +42,7 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
     MascotasDao dao;
     SeguimientoClient client;
     SharedPreferences preferences;
+    boolean apadrinado = false;
 
     public static SeguimientoFragment instance() {
         return new SeguimientoFragment();
@@ -60,13 +61,10 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
         binding.recycler.setAdapter(adapter);
         binding.recycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        //dao = App.session.getMascotasDao();
+        dao = App.session.getMascotasDao();
 
         client = App.retrofit.create(SeguimientoClient.class);
-
-
         return binding.getRoot();
-
     }
 
     @Override
@@ -77,7 +75,6 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
 
     public void loadSeguimiento(){
         String userId = preferences.getString(Preference.KEY_ID, "");
-
         Call<List<Mascotas>> request = client.all(userId);
         request.enqueue(new Callback<List<Mascotas>>() {
             @Override
