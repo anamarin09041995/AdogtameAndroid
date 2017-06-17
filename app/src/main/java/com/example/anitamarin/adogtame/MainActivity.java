@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return true;
     }
 
-    void setContent(int navItem){
+    public void setContent(int navItem){
         content = navItem;
         switch (navItem) {
             case R.id.navigation_catalogo:

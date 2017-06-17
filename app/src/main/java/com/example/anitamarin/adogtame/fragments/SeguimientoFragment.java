@@ -91,9 +91,6 @@ public class SeguimientoFragment extends Fragment implements SeguimientoAdapter.
             }
         });
 
-
-
-
     }
 
     /*@Override

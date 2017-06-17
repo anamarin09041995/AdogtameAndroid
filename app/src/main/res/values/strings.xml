@@ -41,6 +41,8 @@
     <string name="confirmacion">Confirmar donación</string>
     <string name="title_alerta_voluntariado">Fundacion %s</string>
     <string name="mensaje_alerta_voluntariado">Gracias por ser parte del cambio. Nuestros horarios son: %s</string>
+    <string name="title_adopcion">Gracias por adoptar a </string>
+    <string name="mensaje_adopcion">Se ha enviado un correo a tu email con el formulario de adopcion</string>
 
     <!--Mensajes backend-->
     <string name="error_servidor_registro">Error al conectarse al servidor</string>
@@ -50,5 +52,8 @@
     <string name="campos_vacios">Por favor ingrese datos en todos los campos</string>
     <string name="login_incorrecto">Email o password incorrectos</string>
     <string name="validacion_donacion">Por favor elija una opcion de destino y valor de donacion</string>
+    <string name="apadrinaado_existe">Ya has apadrinado a</string>
+    <string name="apadrinar_mascota">Has apadrinado a</string>
+
 
 </resources>
