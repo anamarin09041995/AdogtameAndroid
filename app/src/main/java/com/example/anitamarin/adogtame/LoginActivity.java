@@ -31,11 +31,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
         preferences = getSharedPreferences(Preference.PREFERENCE_NAME, MODE_PRIVATE);
         boolean logged = preferences.getBoolean(Preference.KEY_LOGGED, false);
 
-        if(logged){
+        /*if(logged){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return;
-        }
+        }*/
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
         binding.setHandler(this);
@@ -59,7 +59,6 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
             editor.putString(Preference.KEY_EMAIL, email);
             editor.putBoolean(Preference.KEY_LOGGED, true);
             editor.apply();
-
             Users user = new Users(email, password);
             Call<SimpleResponse> request = client.login(user);
             request.enqueue(this);
@@ -80,15 +79,13 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
                 String userId = simpleResponse.usersget().get_id();
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString(Preference.KEY_ID, userId);
+                Log.d("id", userId);
                 editor.apply();
-                Log.d("idusuario", simpleResponse.usersget().get_id()+"email:"+simpleResponse.usersget().getEmail());
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }else{
                 Toast.makeText(this, R.string.login_incorrecto, Toast.LENGTH_SHORT).show();
             }
-        }else{
-            Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
         }
     }
 
