@@ -1,5 +1,6 @@
 package com.example.anitamarin.adogtame;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
     ActivityLoginBinding binding;
     SharedPreferences preferences;
     UsersClient client;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,29 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
             Users user = new Users(email, password);
             Call<SimpleResponse> request = client.login(user);
             request.enqueue(this);
+            progressDialog = new ProgressDialog(this);
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.activity_progress);
+
+
+            final int totalProgressTime = 100;
+            final Thread t = new Thread() {
+                @Override
+                public void run() {
+                    int jumpTime = 0;
+
+                    while(jumpTime < totalProgressTime) {
+                        try {
+                            sleep(200);
+                            jumpTime += 5;
+                            progressDialog.setProgress(jumpTime);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            };t.start();
         }
     }
 
@@ -81,9 +106,11 @@ public class LoginActivity extends AppCompatActivity implements Callback<SimpleR
                 editor.putString(Preference.KEY_ID, userId);
                 Log.d("id", userId);
                 editor.apply();
+                progressDialog.dismiss();
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
             }else{
+                progressDialog.dismiss();
                 Toast.makeText(this, R.string.login_incorrecto, Toast.LENGTH_SHORT).show();
             }
         }

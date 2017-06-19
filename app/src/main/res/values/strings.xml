@@ -54,6 +54,7 @@
     <string name="validacion_donacion">Por favor elija una opcion de destino y valor de donacion</string>
     <string name="apadrinaado_existe">Ya has apadrinado a</string>
     <string name="apadrinar_mascota">Has apadrinado a</string>
+    <string name="cargando">Cargando..</string>
 
 
 </resources>

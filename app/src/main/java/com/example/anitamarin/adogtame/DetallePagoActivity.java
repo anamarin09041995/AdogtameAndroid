@@ -35,6 +35,8 @@ public class DetallePagoActivity extends AppCompatActivity  {
     ActivityDetallePagoBinding binding;
     DonacionesClient client;
     SharedPreferences preferences;
+    boolean alimento, salud;
+    String value;
 
 
     @Override
@@ -64,8 +66,6 @@ public class DetallePagoActivity extends AppCompatActivity  {
 
     public void donar(){
 
-        boolean alimento, salud;
-        String value;
         value = binding.spinner.getSelectedItem().toString();
         alimento = binding.checkAlimento.isChecked();
         salud = binding.checkImplementos.isChecked();
@@ -82,18 +82,13 @@ public class DetallePagoActivity extends AppCompatActivity  {
                     .setCancelable(false)
                     .setPositiveButton(R.string.confirmar,new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog,int id) {
-                            String selected = binding.spinner.getSelectedItem().toString();
-                            boolean alimento = binding.checkAlimento.isChecked();
-                            boolean salud = binding.checkAlimento.isChecked();
                             String _id = preferences.getString(Preference.KEY_ID, "");
-                            Donaciones donar = new Donaciones(selected, _id, alimento, salud);
+                            Donaciones donar = new Donaciones(value, _id, alimento, salud);
                             Call<SimpleResponse> request = client.donar(donar);
                             request.enqueue(new retrofit2.Callback<SimpleResponse>()
                             {
                                 @Override
-                                public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
-                                    Log.i("DoNAR", ""+response.body().isSuccess());
-                                }
+                                public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {   }
 
                                 @Override
                                 public void onFailure(Call<SimpleResponse> call, Throwable t) {

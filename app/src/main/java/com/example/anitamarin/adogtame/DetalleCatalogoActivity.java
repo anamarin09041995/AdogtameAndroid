@@ -36,6 +36,8 @@ public class DetalleCatalogoActivity extends AppCompatActivity implements retrof
     SeguimientoClient client;
     SharedPreferences preferences;
     EmailClient emailClient;
+    int pos;
+    Mascotas mascota;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +47,8 @@ public class DetalleCatalogoActivity extends AppCompatActivity implements retrof
         setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        int pos = getIntent().getExtras().getInt("pos");
-        Mascotas mascota = Data.mascotas.get(pos);
+         pos = getIntent().getExtras().getInt("pos");
+         mascota = Data.mascotas.get(pos);
 
         binding.setMascota(mascota);
         binding.setHandler(this);
@@ -74,8 +76,7 @@ public class DetalleCatalogoActivity extends AppCompatActivity implements retrof
             @Override
             public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
                 if(response.isSuccessful()){
-                    int pos = getIntent().getExtras().getInt("pos");
-                    Mascotas mascota = Data.mascotas.get(pos);
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(DetalleCatalogoActivity.this);
 
                     // set title
@@ -139,8 +140,7 @@ public class DetalleCatalogoActivity extends AppCompatActivity implements retrof
 
     @Override
     public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
-        int pos = getIntent().getExtras().getInt("pos");
-        Mascotas mascota = Data.mascotas.get(pos);
+
         Toast.makeText(this, getString(R.string.apadrinar_mascota) + mascota.getNombre(), Toast.LENGTH_SHORT).show();
     }
 

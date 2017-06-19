@@ -1,5 +1,6 @@
 package com.example.anitamarin.adogtame;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,7 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
 
     ActivityRegistroBinding binding;
     UsersClient client;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,28 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
         }else {
             Call<RegisterResponse> request = client.register(user);
             request.enqueue(this);
+            progressDialog = new ProgressDialog(this);
+            progressDialog.show();
+            progressDialog.setContentView(R.layout.activity_progress);
+
+            final int totalProgressTime = 100;
+            final Thread t = new Thread() {
+                @Override
+                public void run() {
+                    int jumpTime = 0;
+
+                    while(jumpTime < totalProgressTime) {
+                        try {
+                            sleep(200);
+                            jumpTime += 5;
+                            progressDialog.setProgress(jumpTime);
+                        } catch (InterruptedException e) {
+                            // TODO Auto-generated catch block
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            };t.start();
         }
     }
 
@@ -58,15 +82,15 @@ public class RegistroActivity extends AppCompatActivity implements Callback<Regi
             RegisterResponse registerResponse = response.body();
 
             if(registerResponse.isSuccess()){
+                progressDialog.dismiss();
                 Intent intent = new Intent(this, LoginActivity.class);
                 startActivity(intent);
                 finish();
 
             }else if(registerResponse.isExist()){
+                progressDialog.dismiss();
                 Toast.makeText(this, R.string.registro_existente, Toast.LENGTH_SHORT).show();
             }
-        }else{
-            Toast.makeText(this, R.string.error_registro_usuario, Toast.LENGTH_SHORT).show();
         }
     }
 
