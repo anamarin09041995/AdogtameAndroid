@@ -5,12 +5,12 @@ package com.example.anitamarin.adogtame.models;
  */
 
 public class Donaciones {
-    String value, _id;
+    String value, idUsuario;
     boolean alimento, salud;
 
-    public Donaciones(String value, String _id, boolean alimento, boolean salud) {
+    public Donaciones(String value, String idUsuario, boolean alimento, boolean salud) {
         this.value = value;
-        this._id = _id;
+        this.idUsuario = idUsuario;
         this.alimento = alimento;
         this.salud = salud;
     }

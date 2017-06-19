@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.graphics.Palette;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -69,11 +70,9 @@ public class DetallePagoActivity extends AppCompatActivity  {
         alimento = binding.checkAlimento.isChecked();
         salud = binding.checkImplementos.isChecked();
 
-        if(value == null ||((alimento == false)&&(salud == false))){
+        if(!alimento && !salud){
             Toast.makeText(this, R.string.validacion_donacion, Toast.LENGTH_SHORT).show();
-        }
-
-        else{
+        }else{
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle(R.string.confirmacion );
@@ -93,21 +92,17 @@ public class DetallePagoActivity extends AppCompatActivity  {
                             {
                                 @Override
                                 public void onResponse(Call<SimpleResponse> call, Response<SimpleResponse> response) {
-
+                                    Log.i("DoNAR", ""+response.body().isSuccess());
                                 }
 
                                 @Override
                                 public void onFailure(Call<SimpleResponse> call, Throwable t) {
-
+                                    t.printStackTrace();
                                 }
                             });
                         }
                     })
-                    .setNegativeButton(R.string.cancelar, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int id) {
-                            dialog.cancel();
-                        }
-                    });
+                    .setNegativeButton(R.string.cancelar, null);
 
             AlertDialog alertDialog = builder.create();
             alertDialog.show();

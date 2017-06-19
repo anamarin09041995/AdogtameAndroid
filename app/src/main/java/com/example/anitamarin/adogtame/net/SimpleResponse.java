@@ -10,6 +10,7 @@ public class SimpleResponse {
 
     boolean success;
     Users user;
+    String msg;
 
     public Users usersget(){
         return user;
@@ -21,5 +22,13 @@ public class SimpleResponse {
 
     public void setSuccess(boolean success) {
         this.success = success;
+    }
+
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 }
